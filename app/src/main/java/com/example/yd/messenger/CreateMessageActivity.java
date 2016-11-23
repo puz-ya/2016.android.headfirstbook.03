@@ -50,9 +50,14 @@ public class CreateMessageActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.message);
         String str = editText.getText().toString();
 
-        Intent intent = new Intent(this, ReceiveMessageActivity.class);
+        //Intent intent = new Intent(this, ReceiveMessageActivity.class);
         //EXTRA_MESSAGE only for erasing misunderstandings
-        intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE, str);
+        //intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE, str);
+
+        //new Intent with Action
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, str);
         startActivity(intent);
 
     }
