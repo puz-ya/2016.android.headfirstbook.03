@@ -37,7 +37,6 @@
         android:layout_alignStart="@id/send"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:text="@string/advise"
         android:inputType="text"
         />
 

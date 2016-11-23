@@ -1,5 +1,6 @@
 package com.example.yd.messenger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class CreateMessageActivity extends AppCompatActivity {
 
@@ -44,6 +46,14 @@ public class CreateMessageActivity extends AppCompatActivity {
 
     //after button click
     public void onSendMessage(View view){
+
+        EditText editText = (EditText) findViewById(R.id.message);
+        String str = editText.getText().toString();
+
+        Intent intent = new Intent(this, ReceiveMessageActivity.class);
+        //EXTRA_MESSAGE only for erasing misunderstandings
+        intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE, str);
+        startActivity(intent);
 
     }
 }
