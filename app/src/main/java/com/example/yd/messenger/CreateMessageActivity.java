@@ -58,7 +58,11 @@ public class CreateMessageActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, str);
-        startActivity(intent);
+
+        //if we want to choose everytime
+        String chooserText = getResources().getString(R.string.chooser);
+        Intent chosenIntent = Intent.createChooser(intent, chooserText);
+        startActivity(chosenIntent);
 
     }
 }
