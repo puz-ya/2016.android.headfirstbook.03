@@ -1,7 +1,5 @@
-# 2016.android.headfirstbook.03
+# Chapter 03. Intent.
 
-Name: Messenger.
-
-Send text message by Intent (Explicit & Implicit).
+Messenger. Send text message by Intent (Explicit & Implicit), putExtra, getExtra.
 
 One Button and one EditText.
